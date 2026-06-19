@@ -38,11 +38,17 @@ h2 { font-size: 19px; margin-top: 28px; }
 <p>The App reads and writes health data via Apple HealthKit. Access requires your explicit permission. Revoke anytime: iOS Settings &gt; Privacy and Security &gt; Health &gt; HealthCare+.</p>
 <table>
 <tr><th>Category</th><th>Specific Data Types</th><th>Purpose</th></tr>
+<tr><td>Read</td><td>Steps, distance, active energy, exercise minutes, stand hours, heart rate (resting/walking/workout), HRV (SDNN), blood oxygen (SpO2), wrist temperature, respiratory rate, sleep stages (deep/core/REM/awake), weight, height, body fat, BMI, 39 nutrients (calories/protein/carbs/fat/fiber/sugar/sodium/potassium/calcium/iron/vitamins A/C/E/B1-B3/selenium/magnesium/zinc/phosphorus/saturated fat/cholesterol), mindful minutes, workout GPS routes (coordinates/elevation/pace), VO2max, handwashing, water intake, caffeine, daylight time, hearing health</td><td>Health insights, stress analysis, sleep quality, nutrition tracking, fitness trends</td></tr>
+<tr><td>Write</td><td>Dietary nutrition (39 types), mindful minutes, water intake, caffeine intake</td><td>Log your nutrition, mindfulness sessions, and hydration</td></tr>
+<tr><td>Processing</td><td>All on-device. HRV stress calculation uses personal 7-day baseline. Background HKObserverQuery for widget updates.</td><td>Never for advertising / never sold / never mined</td></tr>
 </table>
 <h2>3. Location Data (CoreLocation)</h2>
 <p>Workout route GPS (when-in-use), Golden Buddy landmark detection (1km region monitoring, stores landmark name + timestamp only, NOT raw coordinates), Weather lookup (city-level approximate). Always-on location only for landmark detection via iOS region monitoring (battery-efficient). Revoke: iOS Settings &gt; Privacy &gt; Location Services.</p>
 <table>
 <tr><th>Use Case</th><th>Precision</th><th>Purpose</th><th>Stored</th></tr>
+<tr><td>Workout routes</td><td>GPS (when-in-use)</td><td>Track exercise path, distance, pace</td><td>Local SwiftData</td></tr>
+<tr><td>Golden Buddy landmarks</td><td>1km region monitoring</td><td>Detect nearby landmarks for buddy feature</td><td>Landmark name + timestamp only (no raw coordinates)</td></tr>
+<tr><td>Weather</td><td>City-level approximate</td><td>Show local weather for activity context</td><td>Cached max 24h</td></tr>
 </table>
 <h2>4. Audio / Microphone (Snore Detection)</h2>
 <p>Apple SoundAnalysis (on-device ML). When user manually activates (before sleep), microphone captures audio, SoundAnalysis classifies snoring locally. Short clips stored locally for playback. NO audio transmitted to servers. Never auto-activated. Revoke: iOS Settings &gt; Privacy &gt; Microphone.</p>
@@ -59,9 +65,15 @@ h2 { font-size: 19px; margin-top: 28px; }
 <h2>10. Widget Data (App Group)</h2>
 <p>Shares data with own widgets via App Group (group.com.yaotianshu.healthcare): habit progress, sleep stages, HRV, stress levels, snore status. Stays within device sandbox. Never transmitted externally.</p>
 <h2>11. Data Retention</h2>
-<p></p>
+<p>Local SwiftData: until app deletion or manual clear. CloudKit: until account deletion or sync disabled. AI chat: local until cleared, never persisted on server. Weather cache: max 24 hours.</p>
 <table>
 <tr><th>Data</th><th>Retention</th></tr>
+<tr><td>Health data (HealthKit)</td><td>Controlled by iOS Health app; App does not retain copies</td></tr>
+<tr><td>Local SwiftData (habits, mood, diet, etc.)</td><td>Until app deletion or manual clear</td></tr>
+<tr><td>CloudKit data</td><td>Until account deletion or sync disabled</td></tr>
+<tr><td>AI chat history</td><td>Local only; until manually cleared</td></tr>
+<tr><td>Weather cache</td><td>Max 24 hours</td></tr>
+<tr><td>Snore audio clips</td><td>Local only; until manually deleted</td></tr>
 </table>
 <h2>12. Children's Privacy</h2>
 <p>App rated 4+. Does not knowingly collect personal info from children under 13. Health data accessed only with device owner permission.</p>
@@ -70,9 +82,14 @@ h2 { font-size: 19px; margin-top: 28px; }
 <h2>14. Security Measures</h2>
 <p>iOS Data Protection (NSFileProtectionComplete), SwiftData (iOS sandbox + file encryption), CloudKit (Apple-managed, server-side + TLS), API communication (HTTPS/TLS), No data brokerage.</p>
 <h2>15. Third-Party Services</h2>
-<p></p>
+<p>The App integrates the following third-party services. No user data is sold to any of them.</p>
 <table>
 <tr><th>Service</th><th>Purpose</th></tr>
+<tr><td>Apple HealthKit</td><td>Read/write health and fitness data (all on-device)</td></tr>
+<tr><td>Apple CloudKit</td><td>Optional cross-device sync (Apple-encrypted)</td></tr>
+<tr><td>MiniMax API (api.minimaxi.com)</td><td>AI health Q&amp;A (opt-in; only typed questions + aggregated summaries sent)</td></tr>
+<tr><td>Open-meteo API</td><td>Weather data (approximate coordinates only)</td></tr>
+<tr><td>Lottie (airbnb)</td><td>Animation rendering (locally bundled, no network calls)</td></tr>
 </table>
 <h2>16. Policy Updates</h2>
 <p>We may update this policy. Changes posted here with updated effective date. Material changes announced in-app.</p>
