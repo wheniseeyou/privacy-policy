@@ -8,45 +8,25 @@
 :root { --accent: #FF9500; --bg: #fff; --text: #1a1a1a; --border: #e0e0e0; --code-bg: #f5f5f5; }
 @media (prefers-color-scheme: dark) { :root { --bg: #1a1a2e; --text: #e0e0e0; --border: #333; --code-bg: #252535; } }
 * { box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; margin: 0; padding: 0; }
 .container { max-width: 820px; margin: 0 auto; padding: 40px 20px 80px; }
-h1 { color: var(--accent); font-size: 28px; border-bottom: 3px solid var(--accent); padding-bottom: 12px; }
-h2 { font-size: 22px; margin-top: 36px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
-h3 { font-size: 17px; margin-top: 24px; color: var(--accent); }
-.lang-nav { position: sticky; top: 0; background: var(--bg); padding: 12px 0; border-bottom: 1px solid var(--border); z-index: 100; text-align: center; }
-.lang-nav a { display: inline-block; padding: 6px 12px; margin: 2px; font-size: 13px; border-radius: 8px; background: var(--code-bg); color: var(--accent); text-decoration: none; }
-.lang-section { border-top: 2px dashed var(--border); margin-top: 48px; padding-top: 32px; }
-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
-th, td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
-th { background: var(--code-bg); }
-ul, ol { padding-left: 20px; }
-li { margin: 4px 0; }
-code { background: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
-strong { color: var(--accent); }
-.updated { color: #888; font-size: 13px; }
-hr { border: none; border-top: 2px dashed var(--border); margin: 48px 0; }
+h1 { color: var(--accent); font-size: 26px; border-bottom: 3px solid var(--accent); padding-bottom: 10px; }
+h2 { font-size: 19px; margin-top: 28px; }
+.lang-nav { position: sticky; top:0; background:var(--bg); padding:10px 0; border-bottom:1px solid var(--border); z-index:100; text-align:center; }
+.lang-nav a { padding:4px 10px; margin:2px; font-size:13px; border-radius:6px; background:var(--code-bg); color:var(--accent); text-decoration:none; }
+.lang-section { border-top:2px dashed var(--border); margin-top:40px; padding-top:24px; }
 </style>
 </head>
 <body>
 <div class="container">
-<div class="lang-nav">
-<a href="#en">English</a> · <a href="#zh">简体中文</a> · <a href="#zt">繁體中文</a> · <a href="#ko">한국어</a> · <a href="#ja">日本語</a> · <a href="#fr">Français</a> · <a href="#es">Español</a> · <a href="#de">Deutsch</a>
-</div>
-
-<!-- ENGLISH -->
+<div class="lang-nav"><a href="#en">English</a> · <a href="#zh">简体中文</a> · <a href="#zt">繁體中文</a> · <a href="#ko">한국어</a> · <a href="#ja">日本語</a> · <a href="#fr">Francais</a> · <a href="#es">Espanol</a> · <a href="#de">Deutsch</a></div>
 <section id="en">
 <h1>Privacy Policy</h1>
-<p class="updated"><strong>Effective Date:</strong> June 19, 2026<br>
-<strong>App:</strong> HealthCare+ - Your Discipline, Health Agent<br>
-<strong>Bundle ID:</strong> com.yaotianshu.healthcare<br>
-<strong>Developer:</strong> Independent Developer (Team ID: 64T95QD5LK)</p>
-<p>This Privacy Policy describes in detail how HealthCare+ ("we", "us", "the App") collects, uses, stores, protects, and shares your personal and health-related information. By using the App, you agree to these practices.</p>
-
+<p style="color:#888;font-size:13px"><b>Effective Date:</b> June 19, 2026<br><b>App:</b> HealthCare+ - Your Discipline, Health Agent<br><b>Bundle ID:</b> com.yaotianshu.healthcare<br><b>Developer:</b> Independent Developer (Team ID: 64T95QD5LK)</p>
 <h2>1. Privacy-First Architecture</h2>
 <p>HealthCare+ is designed with a <strong>privacy-first architecture</strong>. The vast majority of your data is stored <strong>locally on your device</strong> using Apple SwiftData with iOS system-level encryption. We do not operate backend servers for user data storage.</p>
 <table>
-<tr><th>Data Category</th><th>Where Stored</th><th>Encrypted</th><th>Shared Externally</th></tr>
-<tr><td>Health data (HealthKit)</td><td>Local device</td><td>Yes (iOS-level)</td><td>Never</td></tr>
+<tr><th>Health data (HealthKit)</th><th>Local device</th><th>Yes (iOS-level)</th><th>Never</th></tr>
 <tr><td>Habits, discipline, mood, diet</td><td>Local SwiftData</td><td>Yes</td><td>Never</td></tr>
 <tr><td>Buddy collection, badges</td><td>Local + iCloud (optional)</td><td>Yes (CloudKit)</td><td>Never</td></tr>
 <tr><td>Location (routes, landmarks)</td><td>Local SwiftData</td><td>Yes</td><td>Never</td></tr>
@@ -54,235 +34,320 @@ hr { border: none; border-top: 2px dashed var(--border); margin: 48px 0; }
 <tr><td>Analytics / crash logs</td><td>Not collected</td><td>-</td><td>Never</td></tr>
 <tr><td>Advertising identifiers</td><td>Not collected</td><td>-</td><td>Never</td></tr>
 </table>
-
 <h2>2. HealthKit Data - Detailed Disclosure</h2>
-<p>The App reads and writes health data via Apple HealthKit. Access requires your explicit permission. Revoke anytime: iOS Settings > Privacy and Security > Health > HealthCare+.</p>
-<h3>2.1 Data READ from HealthKit</h3>
+<p>The App reads and writes health data via Apple HealthKit. Access requires your explicit permission. Revoke anytime: iOS Settings &gt; Privacy and Security &gt; Health &gt; HealthCare+.</p>
 <table>
 <tr><th>Category</th><th>Specific Data Types</th><th>Purpose</th></tr>
-<tr><td>Activity</td><td>Steps, step intensity (MVPA), distance (walk/run/cycle/swim), active energy, exercise minutes, stand hours</td><td>Habit tracking, ring progress, route analysis</td></tr>
-<tr><td>Vital Signs</td><td>Heart rate (resting/walking/workout), HRV (SDNN), blood oxygen (SpO2), wrist temperature, respiratory rate</td><td>Stress score, recovery score, cardiovascular health</td></tr>
-<tr><td>Sleep</td><td>Sleep stages (deep/core/REM/awake), total duration, nap detection</td><td>Sleep analysis, circadian rhythm, recovery score</td></tr>
-<tr><td>Body Measurements</td><td>Weight, height, body fat percentage, BMI</td><td>Trend tracking, goal calculation</td></tr>
-<tr><td>Nutrition</td><td>39 nutrient types: calories, protein, carbs, fat, fiber, sugar, sodium, potassium, calcium, iron, vitamins A/C/E/B1-B3, selenium, magnesium, zinc, phosphorus, saturated fat, cholesterol</td><td>Diet tracking, calorie trends, nutrition balance</td></tr>
-<tr><td>Mindfulness</td><td>Mindful minutes</td><td>Habit tracking, stress management</td></tr>
-<tr><td>Workout Routes</td><td>GPS coordinates of outdoor workouts (route shape, elevation, pace)</td><td>Route visualization, distance/pace calculation</td></tr>
-<tr><td>Other</td><td>VO2 max, hand washing events, water consumption, caffeine intake, daylight exposure, hearing level</td><td>Comprehensive health tracking</td></tr>
 </table>
-<h3>2.2 Data WRITTEN to HealthKit</h3>
-<ul>
-<li>Dietary nutrition entries (39 nutrient types) - sync food records to Apple Health</li>
-<li>Mindful minutes - record meditation sessions</li>
-<li>Water consumption - record hydration events</li>
-<li>Caffeine intake - record coffee consumption</li>
-</ul>
-<h3>2.3 How Health Data Is Processed</h3>
-<ul>
-<li><strong>Local only:</strong> All analysis (stress score, recovery score, focus score) runs on-device. No health data is transmitted to any server.</li>
-<li><strong>HRV stress calculation:</strong> Reads HRV samples, computes stress percentage based on your personal 7-day baseline. Runs locally.</li>
-<li><strong>Background delivery:</strong> Registers HKObserverQuery for HRV, heart rate, sleep, and step updates to keep widgets/Live Activities current. Data processed locally.</li>
-<li><strong>No advertising use:</strong> Health data is NEVER used for advertising, marketing, profiling, or sold to third parties.</li>
-<li><strong>No data mining:</strong> We do not aggregate, anonymize, or mine health data for analytics.</li>
-</ul>
-
 <h2>3. Location Data (CoreLocation)</h2>
+<p>Workout route GPS (when-in-use), Golden Buddy landmark detection (1km region monitoring, stores landmark name + timestamp only, NOT raw coordinates), Weather lookup (city-level approximate). Always-on location only for landmark detection via iOS region monitoring (battery-efficient). Revoke: iOS Settings &gt; Privacy &gt; Location Services.</p>
 <table>
 <tr><th>Use Case</th><th>Precision</th><th>Purpose</th><th>Stored</th></tr>
-<tr><td>Workout route recording</td><td>GPS coordinates (when-in-use)</td><td>Draw paths, calculate distance/pace/elevation</td><td>Local (encrypted)</td></tr>
-<tr><td>Golden Buddy landmark visits</td><td>Region monitoring (1km radius)</td><td>Detect proximity to named landmarks for gamification</td><td>Landmark name + timestamp only (NOT raw coordinates)</td></tr>
-<tr><td>Weather data</td><td>City-level (approximate)</td><td>Fetch weather/air quality from Open-meteo API</td><td>Not stored (ephemeral)</td></tr>
 </table>
-<p><strong>Always-on location:</strong> Only for Golden Buddy landmark detection using iOS region monitoring (battery-efficient). Raw GPS coordinates of landmark visits are NOT stored. Revoke: iOS Settings > Privacy > Location Services > HealthCare+.</p>
-
 <h2>4. Audio / Microphone (Snore Detection)</h2>
-<ul>
-<li><strong>Framework:</strong> Apple SoundAnalysis (on-device ML classifier)</li>
-<li><strong>Function:</strong> When user manually activates snore detection (before sleep), microphone captures audio, SoundAnalysis classifies snoring locally.</li>
-<li><strong>Audio storage:</strong> Short clips (seconds) of detected snoring stored locally for playback. NO audio transmitted to servers.</li>
-<li><strong>Live Activity:</strong> Results shown via Dynamic Island during monitoring.</li>
-<li><strong>User control:</strong> Never auto-activated. User must manually start each time. Revoke: iOS Settings > Privacy > Microphone > HealthCare+.</li>
-</ul>
-
+<p>Apple SoundAnalysis (on-device ML). When user manually activates (before sleep), microphone captures audio, SoundAnalysis classifies snoring locally. Short clips stored locally for playback. NO audio transmitted to servers. Never auto-activated. Revoke: iOS Settings &gt; Privacy &gt; Microphone.</p>
 <h2>5. CloudKit / iCloud Sync</h2>
-<p>Optional cross-device sync via Apple CloudKit (public database):</p>
-<ul>
-<li><strong>Synced:</strong> User profile (anonymized), buddy collection, badges, coffee/discipline/mood/food records, location events (landmark name only)</li>
-<li><strong>Container:</strong> iCloud.com.yaotianshu.tinyFolish</li>
-<li><strong>Encryption:</strong> Apple CloudKit encryption (server-side + TLS in transit)</li>
-<li><strong>Developer access:</strong> We CANNOT access your synced data content - Apple's CloudKit privacy model prevents this.</li>
-<li><strong>HealthKit data NOT synced via CloudKit.</strong> Health data stays on each device independently.</li>
-</ul>
-
+<p>Optional cross-device sync via Apple CloudKit (public database, container: iCloud.com.yaotianshu.tinyFolish). Synced: user profile (anonymized), buddy collection, badges, coffee/discipline/mood/food records, location events (landmark name only). Apple CloudKit encryption (server-side + TLS). Developer CANNOT access synced data content. HealthKit data NOT synced via CloudKit.</p>
 <h2>6. Sign in with Apple</h2>
-<ul>
-<li><strong>Received:</strong> Anonymous User Record ID (e.g., "_abc123def456"). NOT your Apple ID email or name.</li>
-<li><strong>NOT received:</strong> Your Apple ID email, real name, phone number, or any PII from Apple.</li>
-<li><strong>Nickname and avatar:</strong> Chosen by you within the App. Not imported from Apple ID.</li>
-<li><strong>Account deletion:</strong> Settings > Account > Delete Account. Clears CloudKit + SwiftData + UserDefaults + widget data.</li>
-</ul>
-
+<p>Received: anonymous User Record ID (e.g. _abc123def456). NOT received: your Apple ID email, real name, phone number. Nickname and avatar chosen by you within App. Account deletion: Settings &gt; Account &gt; Delete Account clears all data.</p>
 <h2>7. AI Services (Third-Party APIs)</h2>
-<h3>7.1 MiniMax M2.7 API (AI Health Assistant)</h3>
-<table>
-<tr><th>Item</th><th>Detail</th></tr>
-<tr><td>Provider</td><td>MiniMax (Shanghai, China) - endpoint: api.minimaxi.com</td></tr>
-<tr><td>Data sent</td><td>Your typed health questions + aggregated summaries (e.g., "walked 8000 steps, slept 7 hours")</td></tr>
-<tr><td>Data NOT sent</td><td>Raw HealthKit samples, GPS coordinates, audio recordings, personal identity</td></tr>
-<tr><td>Purpose</td><td>Generate AI health analysis, answer questions, provide advice</td></tr>
-<tr><td>Opt-in</td><td>Yes - requires explicit consent. Consent dialog explains shared data.</td></tr>
-<tr><td>Disable</td><td>Settings > AI Analysis > toggle off. No data sent when disabled.</td></tr>
-<tr><td>Chat history</td><td>Stored locally (SwiftData). Not persisted on MiniMax servers beyond session.</td></tr>
-</table>
-<h3>7.2 Open-meteo API (Weather)</h3>
-<p>Sends approximate lat/long (city-level) for weather lookup. No personal data sent.</p>
-
+<p>MiniMax M2.7 API (api.minimaxi.com): sends your typed health questions + aggregated summaries (e.g. walked 8000 steps). Does NOT send raw HealthKit samples, GPS, audio, or personal identity. Requires explicit opt-in consent. Disable: Settings &gt; AI Analysis &gt; off. Chat history stored locally only. Open-meteo API: sends approximate lat/long for weather. No personal data sent.</p>
 <h2>8. Photos and Camera</h2>
-<ul>
-<li><strong>Avatar:</strong> Uses PhotosUI to pick ONE photo for profile. Stored locally + CloudKit (encrypted). Does NOT access full photo library.</li>
-<li><strong>Camera:</strong> NOT used.</li>
-</ul>
-
+<p>Avatar: PhotosUI picks ONE photo for profile. Stored locally + CloudKit (encrypted). Does NOT access full photo library. Camera: NOT used.</p>
 <h2>9. Calendar and Reminders (EventKit)</h2>
-<p>Optionally writes discipline activity reminders to iOS Calendar/Reminders. One-way write only. Does not read your existing calendar data.</p>
-
+<p>Optionally writes discipline activity reminders to iOS Calendar/Reminders. One-way write only. Does not read existing calendar data.</p>
 <h2>10. Widget Data (App Group)</h2>
-<p>Shares data with own widgets via App Group (<code>group.com.yaotianshu.healthcare</code>): habit progress, sleep stages, HRV, stress levels, snore status. Stays within device sandbox. Never transmitted externally.</p>
-
+<p>Shares data with own widgets via App Group (group.com.yaotianshu.healthcare): habit progress, sleep stages, HRV, stress levels, snore status. Stays within device sandbox. Never transmitted externally.</p>
 <h2>11. Data Retention</h2>
+<p></p>
 <table>
 <tr><th>Data</th><th>Retention</th></tr>
-<tr><td>Local SwiftData</td><td>Until app deletion or manual clear</td></tr>
-<tr><td>CloudKit data</td><td>Until account deletion or iCloud sync disabled</td></tr>
-<tr><td>AI chat history</td><td>Local until user clears; not persisted on servers</td></tr>
-<tr><td>Weather cache</td><td>Up to 24 hours</td></tr>
 </table>
-
 <h2>12. Children's Privacy</h2>
-<p>App rated 4+. Does not knowingly collect personal info from children under 13. Health data accessed only with device owner's iOS-level permission.</p>
-
+<p>App rated 4+. Does not knowingly collect personal info from children under 13. Health data accessed only with device owner permission.</p>
 <h2>13. Your Rights</h2>
-<ul>
-<li><strong>Access:</strong> Request a copy of your data</li>
-<li><strong>Erasure:</strong> Settings > Delete Account (clears all data)</li>
-<li><strong>Restriction:</strong> Disable AI, CloudKit, or any data collection</li>
-<li><strong>Withdraw consent:</strong> Revoke HealthKit/Location/Microphone in iOS Settings anytime</li>
-</ul>
-
+<p>Access (request data copy), Erasure (Settings &gt; Delete Account), Restriction (disable AI/CloudKit), Withdraw consent (revoke HealthKit/Location/Microphone in iOS Settings anytime).</p>
 <h2>14. Security Measures</h2>
-<ul>
-<li>iOS Data Protection (NSFileProtectionComplete) - encrypted at rest</li>
-<li>SwiftData - iOS sandbox + file encryption</li>
-<li>CloudKit - Apple-managed encryption (server-side + TLS)</li>
-<li>API communication - HTTPS/TLS</li>
-<li>No data brokerage - we do not sell, rent, or trade user data</li>
-</ul>
-
+<p>iOS Data Protection (NSFileProtectionComplete), SwiftData (iOS sandbox + file encryption), CloudKit (Apple-managed, server-side + TLS), API communication (HTTPS/TLS), No data brokerage.</p>
 <h2>15. Third-Party Services</h2>
+<p></p>
 <table>
 <tr><th>Service</th><th>Purpose</th></tr>
-<tr><td>Apple HealthKit</td><td>Health data read/write</td></tr>
-<tr><td>Apple CloudKit</td><td>Optional cloud sync</td></tr>
-<tr><td>MiniMax API</td><td>AI health assistant (opt-in)</td></tr>
-<tr><td>Open-meteo</td><td>Weather data</td></tr>
-<tr><td>Lottie (airbnb)</td><td>Animations (bundled, no network)</td></tr>
 </table>
-
 <h2>16. Policy Updates</h2>
-<p>We may update this policy. Changes posted here with updated effective date.</p>
-
+<p>We may update this policy. Changes posted here with updated effective date. Material changes announced in-app.</p>
 <h2>17. Contact</h2>
-<p>Settings > Support > Contact Author, or via App Store Connect Contact module.</p>
-<p class="updated">English version is authoritative. Available in 8 languages below.</p>
-</section>
+<p>Settings &gt; Support &gt; Contact Author, or via App Store Connect Contact module. English version is authoritative.</p>
 
+<p style="color:#888;font-size:13px">English version is authoritative. Available in 8 languages below.</p>
+</section>
 <hr>
-
-<!-- 简体中文 -->
 <section id="zh" class="lang-section">
-<h1>隐私政策</h1>
-<p class="updated"><strong>生效日期：</strong>2026年6月19日<br><strong>App：</strong>HealthCare+ — 你的自律，健康 Agent<br><strong>Bundle ID：</strong>com.yaotianshu.healthcare</p>
-<p>本隐私政策详细说明本App如何收集、使用、存储、保护和共享您的个人及健康信息。使用本App即表示同意本政策。</p>
-<h2>1. 隐私优先架构</h2>
-<p>绝大部分数据<strong>本地存储</strong>在您的设备上（Apple SwiftData + iOS加密）。我们不运营后端服务器存储用户数据。</p>
-<h2>2. HealthKit 数据</h2>
-<h3>读取：步数/距离/能量/心率/HRV/血氧/手腕温度/睡眠阶段/体重身高体脂/39种营养素/正念/运动GPS路线/VO2max/洗手/饮水/咖啡因/日照</h3>
-<h3>写入：饮食营养(39种)/正念分钟/饮水量/咖啡因</h3>
-<h3>处理：全部本地运行，不传服务器。不用广告/不出售。</h3>
-<h2>3. 位置：运动路线GPS/金色伙伴地标(仅存名称)/天气查询(城市级)</h2>
-<h2>4. 麦克风：鼾声检测(SoundAnalysis设备端)，手动启动，不传服务器</h2>
-<h2>5. CloudKit：可选同步(伙伴/勋章/记录)，Apple加密，开发者无法访问内容</h2>
-<h2>6. Sign in with Apple：匿名ID，不收邮箱/姓名，可删账户</h2>
-<h2>7. AI服务：MiniMax API(需同意，可关闭)，发送聚合摘要不传原始数据；Open-meteo天气</h2>
-<h2>8-17. 照片(仅选的头像)/日历(单向写入)/小组件(本地AppGroup)/数据保留/儿童隐私/您的权利/安全措施/第三方服务/政策更新/联系方式</h2>
+<h1>简体中文</h1>
+<h2>隐私优先架构</h2>
+<p>本App采用<strong>隐私优先架构</strong>。绝大部分数据<strong>本地存储</strong>在您的设备上（Apple SwiftData + iOS系统级加密）。不运营后端服务器存储用户数据。</p>
+<h2>HealthKit 数据 — 详细披露</h2>
+<p>本App通过 HealthKit 读写健康数据。需明确授权。随时撤销：iOS设置→隐私与安全性→健康→HealthCare+。<br><b>读取</b>：步数/步数强度/距离/活动能量/运动分钟/站立小时/心率(静息/步行/运动)/心率变异性(HRV SDNN)/血氧(SpO2)/手腕温度/呼吸频率/睡眠阶段(深睡/核心/REM/清醒)/体重/身高/体脂率/BMI/39种营养素(卡路里/蛋白质/碳水/脂肪/纤维/糖/钠/钾/钙/铁/维生素A/C/E/B1-B3/硒/镁/锌/磷/饱和脂肪/胆固醇)/正念分钟/运动GPS路线(坐标/海拔/配速)/VO2max/洗手事件/饮水量/咖啡因/日照时间/听力水平。<br><b>写入</b>：饮食营养(39种)/正念分钟/饮水量/咖啡因摄入。<br><b>处理</b>：全部本地运行，不传服务器。HRV压力计算基于个人7天基线。后台HKObserverQuery保持小组件更新。<b>绝不用于广告/不出售/不挖掘</b>。</p>
+<h2>位置数据(CoreLocation)</h2>
+<p>运动路线GPS(使用时)；金色伙伴地标检测(1km区域监测，仅存地标名称+时间戳，不存原始坐标)；天气查询(城市级近似)。始终位置仅用于地标检测(iOS区域监测，省电)。撤销：iOS设置→隐私→定位服务。</p>
+<h2>音频/麦克风(鼾声检测)</h2>
+<p>Apple SoundAnalysis(设备端ML)。用户手动启动(睡前)，麦克风采集音频，设备端分类鼾声。短片段本地存储供回放。<b>音频绝不传服务器</b>。不自动启动。撤销：iOS设置→隐私→麦克风。</p>
+<h2>CloudKit/iCloud同步</h2>
+<p>可选跨设备同步(Apple CloudKit公共数据库，容器：iCloud.com.yaotianshu.tinyFolish)。同步：用户资料(匿名化)/伙伴收藏/勋章/咖啡/自律/心情/饮食记录/位置事件(仅地标名)。Apple CloudKit加密(服务器端+TLS)。开发者<b>无法访问</b>同步内容。HealthKit数据不通过CloudKit同步。</p>
+<h2>Sign in with Apple</h2>
+<p>收到：匿名User Record ID(如_abc123def456)。不收到：Apple ID邮箱/真实姓名/电话。昵称和头像在App内自行选择。删除账户：设置→账户→删除账户，清除所有数据。</p>
+<h2>AI服务(第三方API)</h2>
+<p>MiniMax M2.7 API(api.minimaxi.com)：发送您输入的健康问题+聚合摘要(如走了8000步)。不发送原始HealthKit样本/GPS/音频/身份。需明确同意。可关闭：设置→AI分析→关。聊天记录仅本地存储。Open-meteo API：发送近似经纬度查天气，不发个人数据。</p>
+<h2>照片和相机</h2>
+<p>头像：PhotosUI选择一张照片，本地+CloudKit存储(加密)。不访问完整相册。相机：不使用。</p>
+<h2>日历和提醒(EventKit)</h2>
+<p>可选将自律活动提醒写入iOS日历/提醒事项。单向写入，不读现有日历数据。</p>
+<h2>小组件数据(App Group)</h2>
+<p>通过App Group(group.com.yaotianshu.healthcare)与自己的小组件共享数据：习惯进度/睡眠阶段/HRV/压力等级/鼾声状态。留在设备沙盒内，不外传。</p>
+<h2>数据保留</h2>
+<p>本地SwiftData：至删除App或手动清除。CloudKit：至删账户或禁用同步。AI聊天：本地至清除，不持久存服务器。天气缓存：最多24小时。</p>
+<h2>儿童隐私</h2>
+<p>App评级4+。不故意收集13岁以下儿童个人信息。健康数据仅在设备所有者iOS权限许可下访问。</p>
+<h2>您的权利</h2>
+<p>访问(请求数据副本)、删除(设置→删除账户)、限制(禁用AI/CloudKit)、撤回同意(iOS设置中随时撤销HealthKit/位置/麦克风权限)。</p>
+<h2>安全措施</h2>
+<p>iOS数据保护(NSFileProtectionComplete)；SwiftData(iOS沙盒+文件加密)；CloudKit(Apple管理，服务器端+TLS)；API通信(HTTPS/TLS)；不出售/出租/交易用户数据。</p>
+<h2>第三方服务</h2>
+<p>Apple HealthKit(健康数据读写)；Apple CloudKit(可选云同步)；MiniMax API(AI助手，可选)；Open-meteo(天气)；Lottie/airbnb(动画，本地打包无网络)。</p>
+<h2>政策更新</h2>
+<p>可能更新本政策。变更发布于此并更新生效日期。重大变更App内通知。</p>
+<h2>联系我们</h2>
+<p>设置→支持→联系作者，或通过App Store Connect联系我们模块。英文版为权威版本。</p>
 </section>
-
 <hr>
 <section id="zt" class="lang-section">
-<h1>隱私政策</h1>
-<p class="updated"><strong>生效日期：</strong>2026年6月19日<br><strong>App：</strong>HealthCare+ — 你的自律，健康 Agent</p>
-<p>本隱私政策詳細說明本App如何收集、使用、儲存、保護和共享您的個人及健康資訊。</p>
-<h2>1. 隱私優先架構：絕大部分資料<strong>本地儲存</strong>（SwiftData + iOS加密）</h2>
-<h2>2. HealthKit：讀取(步數/心率/HRV/血氧/睡眠/39種營養素/GPS路線等)、寫入(營養/正念/飲水/咖啡因)、全部本地處理</h2>
-<h2>3. 位置：運動路線GPS/金色夥伴地標(僅存名稱)/天氣</h2>
-<h2>4. 麥克風：鼾聲偵測(設備端)，手動啟動</h2>
-<h2>5. CloudKit：可選同步，Apple加密，開發者無法存取</h2>
-<h2>6-17. Sign in with Apple/AI服務/照片/日曆/小工具/資料保留/兒童/權利/安全/第三方/更新/聯絡 — 與英文版相同</h2>
+<h1>繁體中文</h1>
+<h2>隱私優先架構</h2>
+<p>本App採用<strong>隱私優先架構</strong>。絕大部分資料<strong>本地儲存</strong>在您的裝置上（Apple SwiftData + iOS系統級加密）。不營運後端伺服器儲存使用者資料。</p>
+<h2>HealthKit 資料 — 詳細揭露</h2>
+<p>本App透過 HealthKit 讀寫健康資料。需明確授權。隨時撤銷：iOS設定→隱私與安全性→健康→HealthCare+。<br><b>讀取</b>：步數/距離/活動能量/運動分鐘/站立小時/心率/心率變異性(HRV)/血氧/手腕溫度/呼吸頻率/睡眠階段/體重/身高/體脂率/BMI/39種營養素/正念分鐘/運動GPS路線/VO2max/洗手/飲水/咖啡因/日照。<br><b>寫入</b>：飲食營養(39種)/正念分鐘/飲水量/咖啡因。<br><b>處理</b>：全部本地執行，不傳伺服器。<b>絕不用於廣告/不出售/不挖掘</b>。</p>
+<h2>位置資料(CoreLocation)</h2>
+<p>運動路線GPS(使用時)；金色夥伴地標偵測(1km區域監測，僅存地標名稱+時間戳，不存原始座標)；天氣查詢(城市級)。始終位置僅用於地標偵測(iOS區域監測)。撤銷：iOS設定→隱私→定位服務。</p>
+<h2>麥克風(鼾聲偵測)</h2>
+<p>Apple SoundAnalysis(裝置端ML)。使用者手動啟動(睡前)，麥克風採集音訊，裝置端分類鼾聲。短片段本地儲存供回放。<b>音訊絕不傳伺服器</b>。不自動啟動。</p>
+<h2>CloudKit/iCloud同步</h2>
+<p>可選跨裝置同步(Apple CloudKit公共資料庫，容器：iCloud.com.yaotianshu.tinyFolish)。同步：使用者資料(匿名化)/夥伴收藏/勳章/咖啡/自律/心情/飲食記錄/位置事件(僅地標名)。Apple加密。開發者<b>無法存取</b>同步內容。HealthKit資料不透過CloudKit同步。</p>
+<h2>Sign in with Apple</h2>
+<p>收到：匿名User Record ID。不收到：Apple ID信箱/真實姓名/電話。刪除帳戶：設定→帳戶→刪除帳戶。</p>
+<h2>AI服務(第三方API)</h2>
+<p>MiniMax API：發送健康問題+聚合摘要。不發原始資料。需同意。可關閉。Open-meteo：發近似經緯度查天氣。</p>
+<h2>照片和相機</h2>
+<p>頭像：PhotosUI選一張，本地+CloudKit儲存。不存取完整相簿。相機：不使用。</p>
+<h2>日曆和提醒</h2>
+<p>可選寫入自律活動提醒到iOS日曆。單向寫入。</p>
+<h2>小工具資料</h2>
+<p>App Group共享：習慣進度/睡眠/HRV/壓力/鼾聲。留在裝置沙盒。</p>
+<h2>資料保留</h2>
+<p>本地：至刪App。CloudKit：至刪帳戶。AI聊天：本地至清除。天氣快取：24小時。</p>
+<h2>兒童隱私</h2>
+<p>評級4+。不故意收集13歲以下兒童個資。</p>
+<h2>您的權利</h2>
+<p>存取/刪除/限制/撤回同意(iOS設定中隨時)。</p>
+<h2>安全措施</h2>
+<p>iOS加密/SwiftData沙盒/CloudKit TLS/HTTPS。不出售資料。</p>
+<h2>第三方服務</h2>
+<p>HealthKit/CloudKit/MiniMax/Open-meteo/Lottie。</p>
+<h2>政策更新</h2>
+<p>可能更新，發布於此並更新日期。</p>
+<h2>聯絡我們</h2>
+<p>設定→支援→聯絡作者。英文版為權威。</p>
 </section>
-
 <hr>
 <section id="ko" class="lang-section">
-<h1>개인정보 처리방침</h1>
-<p class="updated"><strong>시행일:</strong> 2026년 6월 19일</p>
-<h2>1. 프라이버시 우선: 대부분 로컬 저장 (SwiftData + iOS 암호화)</h2>
-<h2>2. HealthKit: 읽기(걸음수/심박수/HRV/혈산소/수면/39종 영양소/GPS 등)·쓰기(영양/마음챙김/음수/카페인)·전체 로컬 처리</h2>
-<h2>3. 위치: 운동 경로/랜드마크(이름만)/날씨</h2>
-<h2>4. 마이크: 코골이 감지(기기 내), 수동 시작</h2>
-<h2>5-17. CloudKit/Apple 로그인/AI 서비스/사진/캘린더/위젯/데이터 보존/아동/권리/보안 — 영문판과 동일</h2>
+<h1>한국어</h1>
+<h2>프라이버시 우선 아키텍처</h2>
+<p>본 앱은 <strong>프라이버시 우선 아키텍처</strong>를 채택했습니다. 데이터 대부분은 Apple SwiftData로 <strong>기기에 로컬 저장</strong>되며 iOS 시스템 수준 암호화로 보호됩니다. 백엔드 서버를 운영하지 않습니다.</p>
+<h2>HealthKit 데이터 — 상세 공개</h2>
+<p>HealthKit으로 건강 데이터를 읽고 씁니다. 명시적 권한 필요. 언제든 철회: iOS 설정→개인정보 보호 및 보안→건강→HealthCare+.<br><b>읽기</b>: 걸음수/거리/활동 에너지/운동 시간/서 있는 시간/심박수/심박수 변이성(HRV)/혈중 산소/손목 온도/호흡수/수면 단계/체중/신장/체지방률/BMI/39종 영양소/마음챙김 분/운동 GPS 경로/최대산소섭취량/손 씻기/음수량/카페인/일조 시간/청력.<br><b>쓰기</b>: 식단 영양(39종)/마음챙김 분/음수량/카페인 섭취.<br><b>처리</b>: 전부 기기에서 로컬 실행, 서버 전송 없음. <b>광고/판매/마이닝 절대 불가</b>.</p>
+<h2>위치 데이터(CoreLocation)</h2>
+<p>운동 경로 GPS(사용 시); 골든 버디 랜드마크 감지(1km 영역 모니터링, 랜드마크 이름+시간만 저장, 원시 좌표 저장 안 함); 날씨 조회(도시급). 상시 위치는 랜드마크 감지에만 사용(iOS 영역 모니터링, 배터리 효율적). 철회: iOS 설정→개인정보→위치 서비스.</p>
+<h2>오디오/마이크(코골이 감지)</h2>
+<p>Apple SoundAnalysis(기기 내 ML). 사용자 수동 시작(취침 전), 마이크로 오디오 캡처, 기기에서 코골이 분류. 짧은 클립 로컬 저장.<b>오디오는 서버로 전송되지 않음</b>. 자동 시작 안 함.</p>
+<h2>CloudKit/iCloud 동기화</h2>
+<p>선택적 교차 기기 동기화(Apple CloudKit 공용 데이터베이스, 컨테이너: iCloud.com.yaotianshu.tinyFolish). 동기화: 사용자 프로필(익명화)/버디 컬렉션/배지/커피/자기관리/기분/식단 기록/위치 이벤트(랜드마크 이름만). Apple 암호화(서버 측+TLS). 개발자는 동기화된 콘텐츠에 <b>접근 불가</b>. HealthKit 데이터는 CloudKit으로 동기화되지 않음.</p>
+<h2>Sign in with Apple</h2>
+<p>수신: 익명 User Record ID. 수신 안 함: Apple ID 이메일/실명/전화번호. 닉네임과 아바타는 앱 내에서 선택. 계정 삭제: 설정→계정→계정 삭제, 모든 데이터 삭제.</p>
+<h2>AI 서비스(타사 API)</h2>
+<p>MiniMax API(api.minimaxi.com): 건강 질문+집계 요약 전송. 원시 HealthKit 샘플/GPS/오디오/신원 전송 안 함. 명시적 동의 필요. 비활성화 가능: 설정→AI 분석→끄기. 채팅 기록은 로컬만 저장. Open-meteo: 근사 좌표로 날씨 조회, 개인 데이터 전송 안 함.</p>
+<h2>사진 및 카메라</h2>
+<p>아바타: PhotosUI로 1장 선택, 로컬+CloudKit 저장. 전체 사진첩 접근 안 함. 카메라: 사용 안 함.</p>
+<h2>캘린더 및 알림(EventKit)</h2>
+<p>선택적으로 자기관리 활동 알림을 iOS 캘린더에 기록. 단방향 쓰기만. 기존 캘린더 데이터 읽지 않음.</p>
+<h2>위젯 데이터(App Group)</h2>
+<p>App Group(group.com.yaotianshu.healthcare)으로 자체 위젯과 데이터 공유: 습관 진행률/수면 단계/HRV/스트레스 수준/코골이 상태. 기기 샌드박스 내에만 존재. 외부 전송 안 함.</p>
+<h2>데이터 보존</h2>
+<p>로컬 SwiftData: 앱 삭제 시까지. CloudKit: 계정 삭제/동기화 비활성화 시까지. AI 채팅: 로컬에서 사용자 삭제 시까지. 날씨 캐시: 최대 24시간.</p>
+<h2>아동 프라이버시</h2>
+<p>앱 등급 4+. 13세 미만 아동의 개인정보를 고의로 수집하지 않음.</p>
+<h2>귀하의 권리</h2>
+<p>접근/삭제(설정→계정 삭제)/제한(AI/CloudKit 비활성화)/동의 철회(iOS 설정에서 HealthKit/위치/마이크 언제든).</p>
+<h2>보안 조치</h2>
+<p>iOS 데이터 보호/SwiftData 샌드박스/CloudKit TLS/HTTPS. 데이터 매매 안 함.</p>
+<h2>타사 서비스</h2>
+<p>Apple HealthKit/Apple CloudKit/MiniMax API/Open-meteo/Lottie.</p>
+<h2>정책 업데이트</h2>
+<p>본 정책을 업데이트할 수 있습니다. 변경 사항은 이곳에 게시되고 시행일이 업데이트됩니다.</p>
+<h2>연락처</h2>
+<p>설정→지원→개발자에게 문의. 영어 버전이 권위 있는 참조입니다.</p>
 </section>
-
 <hr>
 <section id="ja" class="lang-section">
-<h1>プライバシーポリシー</h1>
-<p class="updated"><strong>発効日：</strong>2026年6月19日</p>
-<h2>1. プライバシーファースト：大部分ローカル保存（SwiftData + iOS暗号化）</h2>
-<h2>2. HealthKit：読み取り(歩数/心拍/HRV/血中酸素/睡眠/39種栄養素/GPS等)・書き込み(栄養/マインドフル/飲水/カフェイン)・全てローカル処理</h2>
-<h2>3. 位置情報：ワークアウトルート/ランドマーク(名前のみ)/天気</h2>
-<h2>4. マイク：いびき検出(デバイス上)、手動起動</h2>
-<h2>5-17. CloudKit/Appleでサインイン/AIサービス/写真/カレンダー/ウィジェット/データ保持/こども/権利/セキュリティ — 英語版と同一</h2>
+<h1>日本語</h1>
+<h2>プライバシーファースト設計</h2>
+<p>本アプリは<strong>プライバシーファースト設計</strong>を採用しています。データの大部分はApple SwiftDataで<strong>デバイスにローカル保存</strong>され、iOSシステムレベルの暗号化で保護されます。バックエンドサーバーは運営していません。</p>
+<h2>HealthKitデータ — 詳細開示</h2>
+<p>HealthKitで健康データを読み書きします。明示的な許可が必要。いつでも取り消し: iOS設定→プライバシーとセキュリティ→健康→HealthCare+。<br><b>読み取り</b>: 歩数/距離/アクティブエネルギー/運動時間/スタンド時間/心拍数/心拍変動(HRV)/血中酸素/手首温度/呼吸数/睡眠段階/体重/身長/体脂肪率/BMI/39種栄養素/マインドフル分/運動GPSルート/VO2max/手洗い/飲水量/カフェイン/日照時間/聴力。<br><b>書き込み</b>: 食事栄養(39種)/マインドフル分/飲水量/カフェイン摂取。<br><b>処理</b>: 全てデバイス上でローカル実行、サーバー送信なし。<b>広告/販売/マイニングに絶対使用しない</b>。</p>
+<h2>位置情報(CoreLocation)</h2>
+<p>ワークアウトルートGPS(使用時); ゴールデンバディランドマーク検出(1kmエリアモニタリング、ランドマーク名+タイムスタンプのみ保存、生座標は保存しない); 天気取得(都市レベル). 常時位置はランドマーク検出のみ(iOSエリアモニタリング、省電力). 取り消し: iOS設定→プライバシー→位置情報サービス.</p>
+<h2>オーディオ/マイク(いびき検出)</h2>
+<p>Apple SoundAnalysis(デバイス上ML). ユーザーが手動起動(就寝前)、マイクで音声キャプチャ、デバイス上でいびき分類. 短いクリップをローカル保存.<b>音声はサーバーに送信されない</b>. 自動起動しない.</p>
+<h2>CloudKit/iCloud同期</h2>
+<p>オプションのクロスデバイス同期(Apple CloudKit公開データベース、コンテナ: iCloud.com.yaotianshu.tinyFolish). 同期: ユーザープロフィール(匿名化)/バディコレクション/バッジ/コーヒー/自律/気分/食事記録/位置イベント(ランドマーク名のみ). Apple暗号化(サーバー側+TLS). 開発者は同期コンテンツに<b>アクセス不可</b>. HealthKitデータはCloudKitで同期されない.</p>
+<h2>Sign in with Apple</h2>
+<p>受信: 匿名User Record ID. 非受信: Apple IDメール/本名/電話番号. ニックネームとアバターはアプリ内で選択. アカウント削除: 設定→アカウント→アカウントを削除、全データ消去.</p>
+<h2>AIサービス(サードパーティAPI)</h2>
+<p>MiniMax API(api.minimaxi.com): 健康の質問+集計サマリーを送信. 生HealthKitサンプル/GPS/音声/身元は送信しない. 明示的な同意が必要. 無効化可能: 設定→AI分析→オフ. チャット履歴はローカルのみ. Open-meteo: 近似座標で天気取得、個人データ送信なし.</p>
+<h2>写真とカメラ</h2>
+<p>アバター: PhotosUIで1枚選択、ローカル+CloudKit保存. フォトライブラリ全体にアクセスしない. カメラ: 使用しない.</p>
+<h2>カレンダーとリマインダー(EventKit)</h2>
+<p>オプションで自律活動リマインダーをiOSカレンダーに書き込み. 一方向書き込みのみ. 既存のカレンダーデータは読み取らない.</p>
+<h2>ウィジェットデータ(App Group)</h2>
+<p>App Group(group.com.yaotianshu.healthcare)で独自ウィジェットとデータ共有: 習慣進捗/睡眠段階/HRV/ストレスレベル/いびき状態. デバイスサンドボックス内のみ. 外部送信なし.</p>
+<h2>データ保持</h2>
+<p>ローカルSwiftData: アプリ削除まで. CloudKit: アカウント削除/同期無効化まで. AIチャット: ローカルでユーザー削除まで. 天気キャッシュ: 最大24時間.</p>
+<h2>こどものプライバシー</h2>
+<p>アプリ評価4+. 13歳未満のこどもの個人情報を意図的に収集しない.</p>
+<h2>あなたの権利</h2>
+<p>アクセス/削除(設定→アカウント削除)/制限(AI/CloudKit無効化)/同意撤回(iOS設定でHealthKit/位置/マイクをいつでも).</p>
+<h2>セキュリティ対策</h2>
+<p>iOSデータ保護/SwiftDataサンドボックス/CloudKit TLS/HTTPS. データ売買なし.</p>
+<h2>サードパーティサービス</h2>
+<p>Apple HealthKit/Apple CloudKit/MiniMax API/Open-meteo/Lottie.</p>
+<h2>ポリシー更新</h2>
+<p>本ポリシーを更新する場合があります。変更はここに掲載し、発効日を更新します。</p>
+<h2>お問い合わせ</h2>
+<p>設定→サポート→開発者に連絡. 英語版が権威ある参照です。</p>
 </section>
-
 <hr>
 <section id="fr" class="lang-section">
-<h1>Politique de confidentialité</h1>
-<p class="updated"><strong>Date d'effet :</strong> 19 juin 2026</p>
-<h2>1. Confidentialité d'abord : majorité stockée localement (SwiftData + chiffrement iOS)</h2>
-<h2>2. HealthKit : lecture (pas/FC/VFC/SpO2/sommeil/39 nutriments/GPS etc.)·écriture (nutrition/pleine conscience/hydratation/caféine)·tout local</h2>
-<h2>3. Localisation : itinéraires/points de repère (nom seul)/météo</h2>
-<h2>4. Microphone : détection ronflement (sur appareil), démarrage manuel</h2>
-<h2>5-17. CloudKit/Connexion Apple/Services IA/Photos/Calendrier/Widgets/Rétention/Enfants/Droits/Sécurité — Identique à la version anglaise</h2>
+<h1>Francais</h1>
+<h2>Architecture axee sur la confidentialite</h2>
+<p>L'application adopte une <strong>architecture axee sur la confidentialite</strong>. La grande majorite de vos donnees est <strong>stockee localement</strong> sur votre appareil via Apple SwiftData avec chiffrement au niveau du systeme iOS. Nous n'operons pas de serveurs backend.</p>
+<h2>Donnees HealthKit - Divulgation detaillee</h2>
+<p>L'app lit et ecrit des donnees de sante via Apple HealthKit. Autorisation explicite requise. Revoquer: iOS Reglages > Confidentialite > Sante > HealthCare+.<br><b>Lecture</b>: pas/distance/energie active/minutes d'exercice/heures debout/frequence cardiaque/VFC(HRV)/oxygene sanguin/temperature du poignet/frequence respiratoire/phases de sommeil/poids/taille/pourcentage de graisse/BMI/39 types de nutriments/minutes de pleine conscience/routes GPS d'entrainement/VO2max/lavage des mains/hydratation/caffeine/ensoleillement/audition.<br><b>Ecriture</b>: entrees nutritionnelles(39 types)/minutes de pleine conscience/hydratation/caffeine.<br><b>Traitement</b>: tout en local sur l'appareil, aucune transmission serveur. <b>Jamais utilise pour la publicite/vente/exploration</b>.</p>
+<h2>Donnees de localisation (CoreLocation)</h2>
+<p>Routes GPS d'entrainement (en utilisation); detection de points de repere Golden Buddy (surveillance de zone 1km, stocke nom + horodatage uniquement, PAS de coordonnees brutes); meteo (niveau ville). Localisation permanente uniquement pour detection de points de repere (surveillance de zone iOS, economie batterie). Revoquer: iOS Reglages > Confidentialite > Services de localisation.</p>
+<h2>Audio / Microphone (Detection de ronflement)</h2>
+<p>Apple SoundAnalysis (ML sur appareil). L'utilisateur active manuellement (avant le coucher), le microphone capture l'audio, SoundAnalysis classe les ronflements localement. Courts clips stockes localement pour lecture. <b>AUCUN audio transmis aux serveurs</b>. Jamais active automatiquement.</p>
+<h2>CloudKit / iCloud</h2>
+<p>Synchronisation optionnelle (Apple CloudKit, base publique, conteneur: iCloud.com.yaotianshu.tinyFolish). Synchronise: profil utilisateur (anonymise)/collection de buddies/badges/cafe/discipline/humeur/entrees alimentaires/evenements de localisation (nom seulement). Chiffrement Apple. Developpeur <b>ne peut pas acceder</b> au contenu synchronise. Donnees HealthKit NON synchronisees via CloudKit.</p>
+<h2>Sign in with Apple</h2>
+<p>Recu: identifiant utilisateur anonyme. Non recu: email/nom/telephone Apple ID. Surnom et avatar choisis dans l'app. Suppression: Reglages > Compte > Supprimer le compte.</p>
+<h2>Services IA (API tiers)</h2>
+<p>MiniMax API: envoie questions de sante + resumes agreges. N'envoie pas de donnees HealthKit brutes/GPS/audio/identite. Consentement explicite requis. Desactivable. Open-meteo: coordonnees approximatives pour meteo.</p>
+<h2>Photos et appareil photo</h2>
+<p>Avatar: PhotosUI choisit UNE photo. Stocke localement + CloudKit. N'accede pas a toute la phototheque. Appareil photo: NON utilise.</p>
+<h2>Calendrier et Rappels (EventKit)</h2>
+<p>Ecrit optionnellement des rappels dans le calendrier iOS. Ecriture unidirectionnelle seulement.</p>
+<h2>Donnees widget (App Group)</h2>
+<p>Partage avec ses propres widgets via App Group. Reste dans le sandbox de l'appareil.</p>
+<h2>Conservation des donnees</h2>
+<p>Local: jusqu'a suppression. CloudKit: jusqu'a suppression de compte. Chat IA: local jusqu'a effacement. Cache meteo: 24h max.</p>
+<h2>Confidentialite des enfants</h2>
+<p>Classe 4+. Ne collecte pas sciemment les donnees des moins de 13 ans.</p>
+<h2>Vos droits</h2>
+<p>Acces/suppression/restriction/retrait du consentement (iOS Reglages a tout moment).</p>
+<h2>Mesures de securite</h2>
+<p>Protection des donnees iOS/SwiftData sandbox/CloudKit TLS/HTTPS. Aucune vente de donnees.</p>
+<h2>Services tiers</h2>
+<p>Apple HealthKit/CloudKit/MiniMax/Open-meteo/Lottie.</p>
+<h2>Mises a jour</h2>
+<p>Nous pouvons mettre a jour cette politique.</p>
+<h2>Contact</h2>
+<p>Reglages > Support > Contacter. Version anglaise fait foi.</p>
 </section>
-
 <hr>
 <section id="es" class="lang-section">
-<h1>Política de Privacidad</h1>
-<p class="updated"><strong>Fecha de vigencia:</strong> 19 de junio de 2026</p>
-<h2>1. Privacidad primero: mayoría almacenada localmente (SwiftData + cifrado iOS)</h2>
-<h2>2. HealthKit: lectura (pasos/FC/VFC/SpO2/sueño/39 nutrientes/GPS etc.)·escritura (nutrición/atención plena/hidratación/cafeína)·todo local</h2>
-<h2>3. Ubicación: rutas/puntos de referencia (solo nombre)/clima</h2>
-<h2>4. Micrófono: detección de ronquidos (en dispositivo), inicio manual</h2>
-<h2>5-17. CloudKit/Iniciar sesión con Apple/Servicios IA/Fotos/Calendario/Widgets/Retención/Niños/Derechos/Seguridad — Idéntico a la versión en inglés</h2>
+<h1>Espanol</h1>
+<h2>Arquitectura centrada en la privacidad</h2>
+<p>La aplicacion adopta una <strong>arquitectura centrada en la privacidad</strong>. La gran mayoria de sus datos se <strong>almacenan localmente</strong> en su dispositivo mediante Apple SwiftData con cifrado a nivel del sistema iOS. No operamos servidores backend.</p>
+<h2>Datos de HealthKit - Divulgacion detallada</h2>
+<p>La app lee y escribe datos de salud via Apple HealthKit. Requiere permiso explicito. Revocar: iOS Ajustes > Privacidad > Salud > HealthCare+.<br><b>Lectura</b>: pasos/distancia/energia activa/minutos de ejercicio/horas de pie/frecuencia cardiaca/variabilidad de FC(HRV)/oxigeno en sangre/temperatura de muneca/frecuencia respiratoria/fases de sueno/peso/altura/grasa corporal/BMI/39 tipos de nutrientes/minutos de atencion plena/rutas GPS de entrenamiento/VO2max/lavado de manos/hidratacion/cafeina/exposicion solar/audicion.<br><b>Escritura</b>: entradas nutricionales(39 tipos)/minutos de atencion plena/hidratacion/cafeina.<br><b>Procesamiento</b>: todo en local, sin transmision a servidores. <b>Nunca para publicidad/venta/mineria</b>.</p>
+<h2>Datos de ubicacion (CoreLocation)</h2>
+<p>Rutas GPS de entrenamiento (en uso); deteccion de puntos de referencia Golden Buddy (monitoreo de zona 1km, almacena nombre + marca de tiempo solamente, NO coordenadas crudas); clima (nivel ciudad). Ubicacion permanente solo para deteccion de puntos de referencia (monitoreo de zona iOS, eficiente en bateria). Revocar: iOS Ajustes > Privacidad > Servicios de ubicacion.</p>
+<h2>Audio / Microfono (Deteccion de ronquidos)</h2>
+<p>Apple SoundAnalysis (ML en dispositivo). El usuario lo activa manualmente (antes de dormir), el microfono captura audio, SoundAnalysis clasifica ronquidos localmente. Clips cortos almacenados localmente. <b>NINGUN audio transmitido a servidores</b>. Nunca se activa automaticamente.</p>
+<h2>CloudKit / iCloud</h2>
+<p>Sincronizacion opcional (Apple CloudKit, base publica, contenedor: iCloud.com.yaotianshu.tinyFolish). Sincroniza: perfil de usuario (anonimizado)/coleccion de buddies/insignias/cafe/disciplina/animo/entradas de alimentos/eventos de ubicacion (solo nombre). Cifrado Apple. El desarrollador <b>no puede acceder</b> al contenido sincronizado. Datos HealthKit NO se sincronizan via CloudKit.</p>
+<h2>Sign in with Apple</h2>
+<p>Recibido: identificador de usuario anonimo. No recibido: email/nombre/telefono de Apple ID. Apodo y avatar elegidos en la app. Eliminar cuenta: Ajustes > Cuenta > Eliminar cuenta.</p>
+<h2>Servicios de IA (APIs de terceros)</h2>
+<p>MiniMax API: envia preguntas de salud + resumenes agregados. No envia datos HealthKit crudos/GPS/audio/identidad. Requiere consentimiento explicito. Desactivable. Open-meteo: coordenadas aproximadas para clima.</p>
+<h2>Fotos y camara</h2>
+<p>Avatar: PhotosUI elige UNA foto. Almacenada localmente + CloudKit. No accede a toda la fototeca. Camara: NO usada.</p>
+<h2>Calendario y Recordatorios (EventKit)</h2>
+<p>Opcionalmente escribe recordatorios en el calendario iOS. Solo escritura unidireccional.</p>
+<h2>Datos del widget (App Group)</h2>
+<p>Comparte datos con sus propios widgets via App Group. Permanece en el sandbox del dispositivo.</p>
+<h2>Retencion de datos</h2>
+<p>Local: hasta eliminar app. CloudKit: hasta eliminar cuenta. Chat IA: local hasta borrar. Cache clima: 24h max.</p>
+<h2>Privacidad infantil</h2>
+<p>Clasificado 4+. No recopila datos de menores de 13 anos.</p>
+<h2>Sus derechos</h2>
+<p>Acceso/eliminacion/restriccion/retiro del consentimiento (iOS Ajustes en cualquier momento).</p>
+<h2>Medidas de seguridad</h2>
+<p>Proteccion de datos iOS/sandbox SwiftData/CloudKit TLS/HTTPS. Sin venta de datos.</p>
+<h2>Servicios de terceros</h2>
+<p>Apple HealthKit/CloudKit/MiniMax/Open-meteo/Lottie.</p>
+<h2>Actualizaciones</h2>
+<p>Podemos actualizar esta politica.</p>
+<h2>Contacto</h2>
+<p>Ajustes > Soporte > Contactar. La version en ingles es la autorizada.</p>
 </section>
-
 <hr>
 <section id="de" class="lang-section">
-<h1>Datenschutzerklärungklärung</h1>
-<p class="updated"><strong>Inkrafttreten:</strong> 19. Juni 2026</p>
-<h2>1. Datenschutz zuerst: Mehrheit lokal gespeichert (SwiftData + iOS-Verschlüsselung)</h2>
-<h2>2. HealthKit: Lesen (Schritte/HR/HRV/SpO2/Schlaf/39 Nährstoffe/GPS usw.)·Schreiben (Ernährung/Achtsamkeit/Flüssigkeit/Koffein)·alles lokal</h2>
-<h2>3. Standort: Routen/Wahrzeichen (nur Name)/Wetter</h2>
-<h2>4. Mikrofon: Schnarcherkennung (auf Gerät), manueller Start</h2>
-<h2>5-17. CloudKit/Mit Apple anmelden/KI-Dienste/Fotos/Kalender/Widgets/Aufbewahrung/Kinder/Rechte/Sicherheit — Identisch mit englischer Version</h2>
+<h1>Deutsch</h1>
+<h2>Datenschutzorientierte Architektur</h2>
+<p>Die App verwendet eine <strong>datenschutzorientierte Architektur</strong>. Die ueberwiegende Mehrheit Ihrer Daten wird <strong>lokal auf Ihrem Geraet</strong> ueber Apple SwiftData mit iOS-Verschluesselung gespeichert. Wir betreiben keine Backend-Server.</p>
+<h2>HealthKit-Daten - Detaillierte Offenlegung</h2>
+<p>Die App liest und schreibt Gesundheitsdaten ueber Apple HealthKit. Erfordert ausdrueckliche Genehmigung. Widerrufen: iOS Einstellungen > Datenschutz > Gesundheit > HealthCare+.<br><b>Lesen</b>: Schritte/Distanz/aktive Energie/Bewegungsminuten/Stehstunden/Herzfrequenz/Herzfrequenzvariabilitaet(HRV)/Blutsauerstoff/Handgelenktemperatur/Atemfrequenz/Schlafphasen/Gewicht/Groesse/Koerperfett/BMI/39 Naehrstoffarten/Achtsamkeitsminuten/GPS-Trainingsrouten/VO2max/Haendewaschen/Fluessigkeitsaufnahme/Koffein/Tageslicht/Hoeren.<br><b>Schreiben</b>: Ernaehrungseintraege(39 Arten)/Achtsamkeitsminuten/Fluessigkeitsaufnahme/Koffein.<br><b>Verarbeitung</b>: alles lokal, keine Serveruebertragung. <b>Niemals fuer Werbung/Verkauf/Data Mining</b>.</p>
+<h2>Standortdaten (CoreLocation)</h2>
+<p>GPS-Trainingsrouten (bei Verwendung); Golden Buddy Wahrzeichenerkennung (1km-Zonenueberwachung, speichert nur Name + Zeitstempel, KEINE Rohkoordinaten); Wetter (Stadtebene). Standort dauerhaft nur fuer Wahrzeichenerkennung (iOS-Zonenueberwachung, stromsparend). Widerrufen: iOS Einstellungen > Datenschutz > Standortdienste.</p>
+<h2>Audio / Mikrofon (Schnarcherkennung)</h2>
+<p>Apple SoundAnalysis (geraetseitiges ML). Benutzer startet manuell (vor dem Schlaf), Mikrofon erfasst Audio, SoundAnalysis klassifiziert Schnarchen lokal. Kurze Clips lokal gespeichert. <b>KEIN Audio an Server uebertragen</b>. Nie automatisch aktiviert.</p>
+<h2>CloudKit / iCloud</h2>
+<p>Optionale geräteuebergreifende Synchronisierung (Apple CloudKit, oeffentliche DB, Container: iCloud.com.yaotianshu.tinyFolish). Sync: Benutzerprofil (anonymisiert)/Buddy-Sammlung/Abzeichen/Kaffee/Disziplin/Stimmung/Essenstraege/Standortereignisse (nur Name). Apple-Verschluesselung. Entwickler <b>kann nicht auf</b> synchronisierte Inhalte zugreifen. HealthKit-Daten NICHT ueber CloudKit synchronisiert.</p>
+<h2>Sign in with Apple</h2>
+<p>Erhalten: anonyme User Record ID. Nicht erhalten: Apple ID E-Mail/Name/Telefon. Spitzname und Avatar in der App gewaehlt. Konto loeschen: Einstellungen > Konto > Konto loeschen.</p>
+<h2>KI-Dienste (Drittanbieter-APIs)</h2>
+<p>MiniMax API: sendet Gesundheitsfragen + aggregierte Zusammenfassungen. Sendet keine rohen HealthKit-Daten/GPS/Audio/Identitaet. Erfordert ausdrueckliche Zustimmung. Deaktivierbar. Open-meteo: ungefaehre Koordinaten fuer Wetter.</p>
+<h2>Fotos und Kamera</h2>
+<p>Avatar: PhotosUI waehlt EIN Foto. Lokal + CloudKit gespeichert. Kein Zugriff auf gesamte Fotobibliothek. Kamera: NICHT verwendet.</p>
+<h2>Kalender und Erinnerungen (EventKit)</h2>
+<p>Schreibt optional Disziplin-Aktivitaetserinnerungen in iOS-Kalender. Nur unidirektionales Schreiben.</p>
+<h2>Widget-Daten (App Group)</h2>
+<p>Teilt Daten mit eigenen Widgets ueber App Group. Bleibt im Geraet-Sandbox.</p>
+<h2>Datenaufbewahrung</h2>
+<p>Lokal: bis App-Loeschung. CloudKit: bis Konto-Loeschung. AI-Chat: lokal bis Loeschung. Wetter-Cache: max. 24h.</p>
+<h2>Kinderdatenschutz</h2>
+<p>Bewertet 4+. Sammelt nicht bewusst Daten von Kindern unter 13.</p>
+<h2>Ihre Rechte</h2>
+<p>Zugriff/Loeschung/Einschraenkung/Zustimmung widerrufen (iOS Einstellungen jederzeit).</p>
+<h2>Sicherheitsmassnahmen</h2>
+<p>iOS-Datenschutz/SwiftData-Sandbox/CloudKit TLS/HTTPS. Kein Datenverkauf.</p>
+<h2>Drittanbieter</h2>
+<p>Apple HealthKit/CloudKit/MiniMax/Open-meteo/Lottie.</p>
+<h2>Aktualisierungen</h2>
+<p>Wir koennen diese Richtlinie aktualisieren.</p>
+<h2>Kontakt</h2>
+<p>Einstellungen > Support > Autor kontaktieren. Englische Version ist massgeblich.</p>
 </section>
+<hr>
 
 </div>
 </body>
